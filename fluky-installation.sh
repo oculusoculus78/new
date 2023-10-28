@@ -58,7 +58,7 @@ function ubuntu_18_04 {
     apt install php7.3 php7.3-mbstring php7.3-mysqli php7.3-curl php7.3-dom php7.3-xml php7.3-xmlwriter php7.3-common php7.3-json php7.3-zip php7.3-bcmath php7.3-gettext -y
 
     # install apache with certbot
-    apt install python-certbot-apache -y
+    apt install python3-certbot-apache -y
 
     # install mysql
     apt install mysql-server -y
@@ -539,9 +539,9 @@ lt-cred-mech
     echo ""
     if rpm -q php &> /dev/null
     then
-    echo -e "PHP7.3    : ${LIGHTGREEN}Installed${NOCOLOR}"
+    echo -e "PHP7.4    : ${LIGHTGREEN}Installed${NOCOLOR}"
     else
-    echo -e "PHP7.3    : ${LIGHTRED}Not installed${NOCOLOR}"
+    echo -e "PHP7.4    : ${LIGHTRED}Not installed${NOCOLOR}"
     fi
     echo ""
     if rpm -q httpd &> /dev/null
@@ -664,7 +664,7 @@ if [ -f /etc/lsb-release ]; then
     vernum=$(cut -f2 <<< "$release")
 
     # check is it ubuntu 18.04
-    if [ $vernum == 18.04 ]; then
+    if [ $vernum == 20.04 ]; then
 
         # check zip folder existence
         if [ -f fluky.zip ]; then
