@@ -289,7 +289,7 @@ Password: ${YELLOW}$c${NOCOLOR}"
 }
 
 # fluky installation for centos 7
-function centos_7 {
+function centos_9 {
 
     # welcome message
     echo ""
@@ -692,13 +692,13 @@ elif [ -f /etc/redhat-release ]; then
     vernum=$(rpm -E %{rhel})
 
     # check is it centos 7
-    if [ $vernum == 7 ]; then
+    if [ $vernum == 9 ]; then
 
         # check zip folder existence
         if [ -f fluky.zip ]; then
 
             # install fluky on centos 7
-            centos_7
+            centos_9
 
             # remove installation files
             clear
